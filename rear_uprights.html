@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula SAE Rear Uprights</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #1f2937; }
+        .content-container { max-width: 1200px; } 
+        .project-img { height: 500px; } 
+        h2 { font-size: 1.875rem; }
+        .text-24px { font-size: 1.5rem; }
+        .text-flow { line-height: 1.5; } 
+
+        /* --- NEW: Header/Logo Styles to match Index.html --- */
+        .logo-box {
+            height: 64px; 
+            width: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-[#1f2937] text-white shadow-lg sticky top-0 z-50">
+        <nav class="mx-auto px-10 py-3 flex items-center justify-between">
+            
+            <a href="index.html" class="logo-box flex-shrink-0 mr-8">
+                <img src="logo1.webp" alt="Jack Sokol Logo" class="w-full h-full object-contain">
+            </a>
+
+            <div class="space-x-8 text-lg font-bold">
+                <a href="index.html" class="hover:text-blue-400 transition duration-150">Home</a>
+                <a href="index.html#about" class="hover:text-blue-400 transition duration-150">About Me</a>
+                <a href="index.html#projects" class="hover:text-blue-400 transition duration-150">Projects</a>
+                <a href="index.html#contact" class="hover:text-blue-400 transition duration-150">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="content-container mx-auto px-6 lg:px-10 py-12">
+        <h1 class="text-4xl md:text-5xl font-serif font-extrabold text-gray-900 mb-6 text-center">Formula SAE Rear Uprights</h1>
+        
+        <div class="md:grid md:grid-cols-3 md:gap-12 mb-12">
+            <div class="md:col-span-1 mb-8 md:mb-0">
+                <img src="rear_uprights_thumbnail.webp" alt="Formula SAE Rear Upright Render" class="w-full h-full project-img object-cover rounded-lg shadow-xl">
+            </div>
+
+            <div class="md:col-span-2">
+                <p class="text-24px text-flow mb-6">
+                    As a member of the Formula SAE team, I was responsible for designing and manufacturing the rear uprights for the car. My primary goal was to simplify the previous year's over-engineered design to reduce manufacturing complexity while aggressively minimizing weight and including attachment points for all other suspension components.
+                </p>
+                <h3 class="text-xl font-semibold text-gray-700 mb-4 border-b pb-2">Skills Strengthened:</h3>
+                <ul class="list-disc list-inside text-xl text-gray-700 space-y-2 pl-4">
+                    <li>CAD Modeling (SolidWorks)</li>
+                    <li>FEA-Driven Design Optimization (SolidWorks)</li>
+                    <li>Advanced CNC Tool Path Programming (Fusion 360)</li>
+                    <li>CNC Milling</li>
+                    <li>System Integration & Multi-Constraint Design</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="my-12">
+
+        <div class="md:grid lg:grid-cols-3 md:gap-12 items-start mb-12">
+            <div class="order-2 lg:order-1 lg:col-span-2">
+                <h2 class="text-3xl font-serif font-semibold text-gray-900 mb-4 text-center">Modeling</h2>
+                <p class="text-24px text-flow">
+                    The upright serves as the critical anchor for the control arms, brake caliper, and axle. I used SolidWorks for modeling, beginning with defining the global attachment points for the components listed above, and then building outward from bearing bore to control arm flanges. A key challenge was designing the flanges to be thick enough to support racing forces, while still allowing for full movement of the control arms and fitting within the wheel's envelope.
+                </p>
+            </div>
+            <div class="order-1 lg:order-2 lg:col-span-1 mb-6 md:mb-0 h-[400px] overflow-hidden">
+                <img src="rear_uprights_front.webp" alt="Upright Modeling View" class="w-full h-full object-cover rounded-lg shadow-md">
+            </div>
+        </div>
+
+        <hr class="my-12">
+
+        <div class="md:grid lg:grid-cols-5 md:gap-12 items-start mb-12">
+            <div class="order-1 lg:order-1 lg:col-span-2 mb-6 md:mb-0">
+                <img src="rear_uprights_FEA.webp" alt="FEA Stress Plot" class="w-full rounded-lg shadow-md">
+            </div>
+            <div class="order-2 lg:order-2 lg:col-span-3">
+                <h2 class="text-3xl font-serif font-semibold text-gray-900 mb-4 text-center">Analysis</h2>
+                <p class="text-24px text-flow">
+                    I performed extensive FEA to validate the design and meet our required safety factor of 1.5. The axial and radial bearing loads, along with the axial forces in the control arms, were calculated for accelerating, braking, and cornering, and then input into the analysis through applied loads and boundary conditions. To the left is a plot of the von Mises stress in the part during outside cornering, the most intense scenario for the upright. The color scale is adjusted to highlight stress concentrations (red areas) which remain well below the material's yield strength, ensuring our factor of safety.
+                </p>
+            </div>
+        </div>
+
+        <hr class="my-12">
+
+        <div class="md:grid lg:grid-cols-3 md:gap-12 items-start mb-12">
+            <div class="order-2 lg:order-1 lg:col-span-1">
+                <h2 class="text-3xl font-serif font-semibold text-gray-900 mb-4 text-center">Fabrication</h2>
+                <p class="text-24px text-flow">
+                    After optimizing the geometry, I used Fusion 360 CAM to program the CNC tool paths and machined the final component on a 3-axis CNC mill to achieve a lightweight, race-ready part.
+                </p>
+            </div>
+            <div class="order-1 lg:order-2 lg:col-span-1 mb-6 md:mb-0 h-[400px] overflow-hidden">
+                <img src="finished_upright.webp" alt="Physical Machined Upright" class="w-full h-full object-cover rounded-lg shadow-md">
+                <p class="text-sm text-gray-500 mt-2 italic text-center">Physical Machined Upright</p>
+            </div>
+            <div class="order-3 lg:order-3 lg:col-span-1 mb-6 md:mb-0">
+                <img src="formula_car_comp.webp" alt="CNC Toolpath Simulation" class="w-full rounded-lg shadow-md">
+            </div>
+        </div>
+
+    </main>
+
+    <footer id="contact" class="bg-gray-900 text-white py-12 mt-16">
+        <div class="content-container mx-auto px-6 lg:px-10 text-center">
+            <h2 class="text-3xl font-serif font-light mb-4">Contact</h2>
+            <p class="text-white mb-2">
+                jackrobertsokol@gmail.com | 
+                <a href="YOUR_RESUME_FILE.pdf" target="_blank" class="hover:text-blue-400 transition duration-150">Resume</a> | 
+                <a href="https://www.linkedin.com/in/jack-sokol" target="_blank" class="hover:text-blue-400 transition duration-150">LinkedIn</a>
+            </p>
+            <p class="text-gray-500 text-sm mt-6">&copy; 2025 Jack Sokol. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Injection Molded Part & Mold Creation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Styles ported from rear_uprights.html for consistency */
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #1f2937; }
+        .content-container { max-width: 1200px; } /* SYNCHRONIZED MAX-WIDTH TO 1200px */
+        /* Note: project-img is unused in the top summary block in this new layout */
+        
+        /* Custom adjustment for headers to hit exactly 30px */
+        h2 { font-size: 1.875rem; /* 30px */ }
+        
+        /* Custom class to ensure paragraph text is 24px */
+        .text-24px { font-size: 1.5rem; /* 24px */ }
+        
+        /* Standardizing line height for better horizontal flow */
+        .text-flow { line-height: 1.5; } 
+                .logo-box {
+            height: 64px; 
+            width: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-[#1f2937] text-white shadow-lg sticky top-0 z-50">
+        <nav class="mx-auto px-10 py-3 flex items-center justify-between">
+            
+            <a href="index.html" class="logo-box flex-shrink-0 mr-8">
+                <img src="logo1.webp" alt="Jack Sokol Logo" class="w-full h-full object-contain">
+            </a>
+
+            <div class="space-x-8 text-lg font-bold">
+                <a href="index.html" class="hover:text-blue-400 transition duration-150">Home</a>
+                <a href="index.html#about" class="hover:text-blue-400 transition duration-150">About Me</a>
+                <a href="index.html#projects" class="hover:text-blue-400 transition duration-150">Projects</a>
+                <a href="index.html#contact" class="hover:text-blue-400 transition duration-150">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="content-container mx-auto px-6 lg:px-10 py-12">
+        <!-- Main H1 Title - CENTERED -->
+        <h1 class="text-4xl md:text-5xl font-serif font-extrabold text-gray-900 mb-6 text-center">Injection Molding Course Project</h1>
+        
+        <!-- NEW: Full Page Width Image - ADAPTABLE HEIGHT -->
+        <div class="mb-12">
+            <!-- Image source updated to me340-2_banner.webp from the uploaded file -->
+            <img src="me340-2_banner.webp" alt="Injection Molded Product Overview" class="w-full rounded-lg shadow-xl">
+        </div>
+
+        <!-- NEW: Summary Text Row (Two 1/2 Text Containers) -->
+        <div class="md:grid md:grid-cols-2 md:gap-12 mb-12">
+            <!-- Left Column: Summary Text (1/2 width) -->
+            <div class="md:col-span-1 mb-8 md:mb-0">
+                <p class="text-24px text-flow">
+                    In a group of four for Northwestern's Computer Integrated Manufacturing course, we went through the full process of creating an injection molded part, including ideation, modeling, CNC toolpath programming and manufacturing, and injection molding.
+                </p>
+            </div>
+            
+            <!-- Right Column: Skills (1/2 width) -->
+            <div class="md:col-span-1">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4 border-b pb-2">Skills Strengthened:</h3>
+                <ul class="list-disc list-inside text-xl text-gray-700 space-y-2 pl-4">
+                    <li>CAD Modeling (Siemens NX)</li>
+                    <li>CNC Tool Path Programming (Siemens NX)</li>
+                    <li>CNC Milling</li>
+                    <li>Injection Molding</li>
+                    <li>Report Writing</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="my-12">
+
+        <!-- ROW 1 (Modeling) - IMAGE (2/5) LEFT / TEXT (3/5) RIGHT (UPDATED SPLIT) -->
+        <!-- Grid changed to lg:grid-cols-5 for 2/5 and 3/5 split. items-start changed to items-center -->
+        <div class="md:grid lg:grid-cols-5 md:gap-12 items-center mb-12">
+            <!-- Image block (Left) - 2/5 width (lg:col-span-2), ADAPTABLE HEIGHT -->
+            <div class="order-1 lg:order-1 lg:col-span-2 mb-6 md:mb-0">
+                <!-- REMOVED: rounded-lg shadow-md -->
+                <img src="among_us_cad.webp" alt="Injection Molded Part Detail CAD" class="w-full">
+            </div>
+            <!-- Text block (Right) - 3/5 width (lg:col-span-3) -->
+            <div class="order-2 lg:order-2 lg:col-span-3">
+                <h2 class="text-3xl font-serif font-semibold text-gray-900 mb-4 text-center">Modeling</h2>
+                <p class="text-24px text-flow">
+                    This project involved leading the end-to-end design and manufacturing process for a customized, two-part Among Us character and two attachable accessories (a hat and a mustache) using plastic injection molding. The primary goal was to gain expertise in creating parts optimized for mass production while ensuring reliable assembly through precise fitment. After selecting the concept of our product, we used NX CAD to create shells for the two halves of the part and the accessories. We focused on design choices important to successful injection molding like consistent wall thickness, avoiding sharp corners, and a $2$ degree draft angle.
+                </p>
+            </div>
+        </div>
+
+        <hr class="my-12">
+
+        <!-- ROW 2 (Mold Manufacturing) - TEXT (2/3) LEFT / IMAGE (1/3) RIGHT (FIXED SPLIT) -->
+        <!-- Grid is lg:grid-cols-3 for 2/3 and 1/3 split -->
+        <div class="md:grid lg:grid-cols-3 md:gap-12 items-start mb-12">
+            <!-- Text block (Left) - 2/3 width (lg:col-span-2) -->
+            <!-- UPDATED SPAN: lg:col-span-2 -->
+            <div class="order-1 lg:order-1 lg:col-span-2">
+                <h2 class="text-3xl font-serif font-semibold text-gray-900 mb-4 text-center">Mold Manufacturing</h2>
+                <p class="text-24px text-flow">
+                    The core of the project centered on CNC machining four aluminum mold halves (Core and Cavity). We used NX CAM to program various roughing and finishing operations to achieve a polished surface finish and desired interference fits for our pins. Besides just the parts models, we also had to machine in the sprue and runners for the plastics to travel through during the injection process. Calculations were done on the runner design to ensure both parts would fill simultaneously.
+                </p>
+            </div>
+            <!-- Image block (Right) - 1/3 width (lg:col-span-1), ADAPTABLE HEIGHT -->
+            <!-- UPDATED SPAN: lg:col-span-1 -->
+            <div class="order-2 lg:order-2 lg:col-span-1 mb-6 md:mb-0">
+                <!-- REMOVED: rounded-lg shadow-md -->
+                <img src="among_us_mold.webp" alt="Cavity and Runner System Diagram" class="w-full">
+            </div>
+        </div>
+
+        <hr class="my-12">
+
+        <!-- ROW 3 (Quality Control) - IMAGE (1/3) LEFT / TEXT (2/3) RIGHT (FIXED SPLIT) -->
+        <!-- Grid changed to lg:grid-cols-3 for 1/3 and 2/3 split -->
+        <div class="md:grid lg:grid-cols-3 md:gap-12 items-start mb-12">
+            <!-- Image block (Left) - 1/3 width (lg:col-span-1), fixed height 400px -->
+            <!-- Changed span from lg:col-span-1 (1/4 width in the old 4-col grid) to lg:col-span-1 (1/3 width in the new 3-col grid) -->
+            <div class="order-1 lg:order-1 lg:col-span-1 mb-6 md:mb-0 h-[400px] overflow-hidden">
+                <!-- Image URL updated to the clean sticker image -->
+                <img src="among_us_product.webp" alt="Finished Injection Molded Part Sticker" class="w-full h-full object-contain rounded-lg shadow-md">
+            </div>
+            <!-- Text block (Right) - 2/3 width (lg:col-span-2) -->
+            <!-- Changed span from lg:col-span-3 (3/4 width in the old 4-col grid) to lg:col-span-2 (2/3 width in the new 3-col grid) -->
+            <div class="order-2 lg:order-2 lg:col-span-2">
+                <h2 class="text-3xl font-serif font-semibold text-gray-900 mb-4 text-center">Quality Control and Process Tuning</h2>
+                <p class="text-24px text-flow">
+                    The final stage focused on honing in injection parameters like injection time, pressure, and temperature to eliminate molding defects. We then examined quality control through a metrology study of $20$ molded samples. By measuring critical features like the mustache pin diameter and hat height, we established a production average and calculated dimensional deviation. The measured parts showed consistent shrinkage, aligning with expected polypropelyne material behavior.
+                </p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer id="contact" class="bg-gray-900 text-white py-12 mt-16">
+        <div class="content-container mx-auto px-6 lg:px-10 text-center">
+            <h2 class="text-3xl font-serif font-light mb-4">Contact</h2>
+            <p class="text-white mb-2">
+                jackrobertsokol@gmail.com | 
+                <a href="YOUR_RESUME_FILE.pdf" target="_blank" class="hover:text-blue-400 transition duration-150">Resume</a> | 
+                <a href="https://www.linkedin.com/in/jack-sokol" target="_blank" class="hover:text-blue-400 transition duration-150">LinkedIn</a>
+            </p>
+            <p class="text-gray-500 text-sm mt-6">&copy; 2025 Jack Sokol. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+</body>
+</html>

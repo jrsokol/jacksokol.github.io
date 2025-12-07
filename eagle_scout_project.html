@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eagle Scout Project: Deck Renovation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Styles ported from me340-2_project.html for consistency */
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #1f2937; }
+        .content-container { max-width: 1200px; } /* SYNCHRONIZED MAX-WIDTH TO 1200px */
+        .project-img { height: 345px; } /* UPDATED: Fixed height for the main summary image to 345px */
+        
+        /* Custom adjustment for headers to hit exactly 30px */
+        h2 { font-size: 1.875rem; /* 30px */ }
+        
+        /* Custom class to ensure paragraph text is 24px */
+        .text-24px { font-size: 1.5rem; /* 24px */ }
+        
+        /* Standardizing line height for better horizontal flow */
+        .text-flow { line-height: 1.5; } 
+        .logo-box {
+            height: 64px; 
+            width: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-[#1f2937] text-white shadow-lg sticky top-0 z-50">
+        <nav class="mx-auto px-10 py-3 flex items-center justify-between">
+            
+            <a href="index.html" class="logo-box flex-shrink-0 mr-8">
+                <img src="logo1.webp" alt="Jack Sokol Logo" class="w-full h-full object-contain">
+            </a>
+
+            <div class="space-x-8 text-lg font-bold">
+                <a href="index.html" class="hover:text-blue-400 transition duration-150">Home</a>
+                <a href="index.html#about" class="hover:text-blue-400 transition duration-150">About Me</a>
+                <a href="index.html#projects" class="hover:text-blue-400 transition duration-150">Projects</a>
+                <a href="index.html#contact" class="hover:text-blue-400 transition duration-150">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="content-container mx-auto px-6 lg:px-10 py-12">
+        <!-- Main H1 Title - CENTERED -->
+        <h1 class="text-4xl md:text-5xl font-serif font-extrabold text-gray-900 mb-6 text-center">Eagle Scout Project - Deck Renovation</h1>
+        
+        <!-- TOP SUMMARY BLOCK (Image 2/5 Left, Text & Skills 3/5 Right) -->
+        <!-- Grid is lg:grid-cols-5 for 2/5 and 3/5 split -->
+        <div class="md:grid lg:grid-cols-5 md:gap-12 mb-12">
+            <!-- Left Column: Main Image (2/5 width, 345px height) -->
+            <div class="lg:col-span-2 mb-8 md:mb-0 h-[345px] overflow-hidden">
+                <!-- Using the finished deck image here -->
+                <img src="eagle_scout_header.webp" alt="Finished Deck Renovation for Boys Hope Girls Hope" class="w-full h-full object-cover rounded-lg shadow-xl">
+            </div>
+
+            <!-- Right Column: Summary and Skills (3/5 width) -->
+            <div class="lg:col-span-3">
+                <p class="text-24px text-flow mb-6">
+                    As my Eagle Scout Service Project, I led a group of $14$ volunteers in a comprehensive deck renovation for Boys Hope Girls Hope, an organization that provides housing and a stable home environment for at-risk youth from Chicago.
+                </p>
+                
+                <h3 class="text-xl font-semibold text-gray-700 mb-4 border-b pb-2">Skills Strengthened:</h3>
+                <ul class="list-disc list-inside text-xl text-gray-700 space-y-2 pl-4">
+                    <li>Project Management</li>
+                    <li>Client Communication</li>
+                    <li>Overcoming Surprise Challenges</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="my-12">
+
+        <!-- ROW 1 (Background & Initial Findings) - TEXT (3/5) LEFT / IMAGE (2/5) RIGHT -->
+        <!-- Grid is lg:grid-cols-5 for 3/5 and 2/5 split. ALIGNMENT CHANGED TO items-center -->
+        <div class="md:grid lg:grid-cols-5 md:gap-12 items-center mb-12">
+            <!-- Text block (Left) - 3/5 width (lg:col-span-3) -->
+            <div class="order-1 lg:order-1 lg:col-span-3">
+                <h2 class="text-3xl font-serif font-semibold text-gray-900 mb-4 text-center">Background and Initial Findings</h2>
+                <p class="text-24px text-flow">
+                    The project was chosen because the residents of the house had expressed their wishes of having a backyard deck that was safe for outdoor activities and leisure. The existing structure had multiple safety and integrity issues: the stair stringers were rotted, the paint was chipped, and the deck's screw heads had sheared off. As we found out during demolition, certain joist hangers had corroded as well, requiring immediate structural mitigation.
+                </p>
+            </div>
+            <!-- Image block (Right) - 2/5 width (lg:col-span-2), FIXED HEIGHT 345px -->
+            <div class="order-2 lg:order-2 lg:col-span-2 mb-6 md:mb-0 h-[345px] overflow-hidden">
+                <!-- Image 2 from PDF (Old deck/joists exposed) -->
+                <img src="old_deck.webp" alt="Old deck before renovation" class="w-full h-full object-cover rounded-lg shadow-xl">
+            </div>
+        </div>
+
+        <hr class="my-12">
+
+        <!-- ROW 2 (Execution and Process Management) - IMAGE (2/5) LEFT / TEXT (3/5) RIGHT (Alternating Pattern) -->
+        <!-- Grid is lg:grid-cols-5 for 2/5 and 3/5 split. ALIGNMENT CHANGED TO items-center -->
+        <div class="md:grid lg:grid-cols-5 md:gap-12 items-center mb-12">
+            <!-- Image block (Left) - 2/5 width (lg:col-span-2), FIXED HEIGHT 345px -->
+            <div class="order-1 md:order-1 lg:col-span-2 mb-6 md:mb-0 h-[345px] overflow-hidden">
+                <!-- Image 3/4 from PDF (Construction in progress) -->
+                <img src="stripped_deck.webp" alt="Volunteers installing new deck boards" class="w-full h-full object-cover rounded-lg shadow-xl">
+            </div>
+            <!-- Text block (Right) - 3/5 width (lg:col-span-3) -->
+            <div class="order-2 md:order-2 lg:col-span-3">
+                <h2 class="text-3xl font-serif font-semibold text-gray-900 mb-4 text-center">Execution and Process Management</h2>
+                <p class="text-24px text-flow">
+                    I successfully planned and led $14$ volunteers, totaling $134$ hours of service, to demolish and completely rebuild the organization's deteriorated deck using new pressure-treated lumber. We began by prying off the old deck boards, and then I divided the volunteers into three groups: One to cut up the old boards for easy disposal, another to replace the corroded joist hangers, and a third to lay down new boards. We finished with building four new sets of stairs, and final aesthetic adjustments.
+                </p>
+            </div>
+        </div>
+        
+        <hr class="my-12">
+
+        <!-- ROW 3 (Takeaways) - TEXT (3/5) LEFT / IMAGE (2/5) RIGHT (Alternating Pattern) -->
+        <!-- Grid is lg:grid-cols-5 for 3/5 and 2/5 split. RETAINING items-start -->
+        <div class="md:grid lg:grid-cols-5 md:gap-12 items-start mb-12">
+            <!-- Text block (Left) - 3/5 width (lg:col-span-3) -->
+            <div class="order-1 lg:order-1 lg:col-span-3">
+                <h2 class="text-3xl font-serif font-semibold text-gray-900 mb-4 text-center">Leadership and Key Takeaways</h2>
+                <p class="text-24px text-flow">
+                    My role demanded hands-on leadership: I managed a budget of over $\$1,200$, developed detailed work processes, and mitigated unexpected on-site challenges. This experience solidified my ability to plan complex scopes, adapt quickly to adversity, and motivate diverse, unskilled teams toward a high-quality finished product.
+                </p>
+            </div>
+            <!-- Image block (Right) - 2/5 width (lg:col-span-2), FIXED HEIGHT 345px -->
+            <div class="order-2 lg:order-2 lg:col-span-2 mb-6 md:mb-0 h-[345px] overflow-hidden">
+                <!-- Placeholder image for Takeaways/Leadership -->
+                <img src="resurfacing.webp" alt="Jack leading volunteers on site" class="w-full h-full object-cover rounded-lg shadow-xl">
+            </div>
+        </div>
+
+    </main>
+
+    <footer id="contact" class="bg-gray-900 text-white py-12 mt-16">
+        <div class="content-container mx-auto px-6 lg:px-10 text-center">
+            <h2 class="text-3xl font-serif font-light mb-4">Contact</h2>
+            <p class="text-white mb-2">
+                jackrobertsokol@gmail.com | 
+                <a href="YOUR_RESUME_FILE.pdf" target="_blank" class="hover:text-blue-400 transition duration-150">Resume</a> | 
+                <a href="https://www.linkedin.com/in/jack-sokol" target="_blank" class="hover:text-blue-400 transition duration-150">LinkedIn</a>
+            </p>
+            <p class="text-gray-500 text-sm mt-6">&copy; 2025 Jack Sokol. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+</body>
+</html>

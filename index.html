@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jack Sokol | Manufacturing Engineering Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Use a classic serif font for main headers to match the target site's elegance */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1f2937; /* Dark text */
+        }
+        /* Style for the main content container */
+        .content-container {
+            max-width: 1200px;
+        }
+        /* Full-screen Hero Background Styling */
+        .hero-bg {
+            /* 1. HERO IMAGE IMPLEMENTATION: Updated URL to use your local file */
+            background-image: url('hero.webp'); 
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh; /* Full height of viewport */
+            position: relative;
+        }
+        /* Styling for the large main title text over the hero image */
+        .hero-title-text {
+            /* White text for visibility against dark background */
+            color: white;
+        }
+        /* 3. PROFILE PICTURE BORDER COLOR: Changed from blue (#1e40af) to sticky header color (#1f2937) */
+        .profile-border {
+            border: 4px solid #1f2937; 
+        }
+
+        /* STICKY HEADER STYLING */
+        .sticky-header {
+            /* Initially transparent, sticky positioning */
+            background-color: transparent;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 50;
+            /* Transition for color change when scrolling */
+            transition: background-color 0.3s ease;
+        }
+
+        /* Class to be added via JS when scrolled past the hero section */
+        .sticky-header.scrolled {
+            background-color: #1f2937; /* Dark background */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styles for links in the initial transparent state (over dark image) */
+        .initial-link {
+            color: white;
+        }
+
+        /* Styles for links when the header is sticky and dark */
+        .scrolled .initial-link {
+            color: white; /* Maintain white color against the dark sticky background */
+        }
+
+        /* **CRITICAL**: Ensures the image maintains its aspect ratio while covering the set height */
+        .project-thumbnail {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Retains cropping logic */
+        }
+
+        /* Custom logo styling */
+        .logo-box {
+            height: 64px; 
+            width: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- STICKY NAVIGATION BAR (TALLER AND FULL WIDTH) -->
+    <header id="sticky-nav" class="sticky-header">
+        <!-- Kept full width and py-3 for height -->
+        <nav class="mx-auto px-10 py-3 flex items-center justify-between"> 
+            
+            <!-- Logo Section (Left End) - Set as a link to HOME -->
+            <a href="#top" class="logo-box initial-link flex-shrink-0 mr-8">
+            <img src="logo1.webp" alt="Jack Sokol Logo" class="w-full h-full object-contain" style="border: none;"> 
+            </a>
+
+            <!-- Removed the flex-grow and justify-center divs to move links right -->
+            <div class="space-x-8 text-lg font-bold"> 
+                <!-- Added Home link -->
+                <a href="#top" class="initial-link hover:text-blue-400 transition duration-150">Home</a>
+                <a href="#about" class="initial-link hover:text-blue-400 transition duration-150">About Me</a>
+                <a href="#projects" class="initial-link hover:text-blue-400 transition duration-150">Projects</a>
+                <a href="#contact" class="initial-link hover:text-blue-400 transition duration-150">Contact</a>
+            </div>
+
+            <!-- Removed Placeholder div -->
+
+        </nav>
+    </header>
+    
+    <!-- Added #top anchor to link the logo and home button to the start of the hero section -->
+    <a id="top"></a>
+
+    <!-- Hero Section -->
+    <section class="hero-bg flex flex-col">
+        
+        <!-- Centered Main Title -->
+        <div class="flex-grow flex items-center justify-center">
+            <!-- Centering is handled by parent flex classes -->
+            <div class="p-8 text-center">
+                <!-- SWAPPED ORDER: Subtitle is first, no top margin needed -->
+                <p class="hero-title-text text-xl md:text-2xl tracking-wider">
+                    DESIGN. BUILD. OPTIMIZE.
+                </p>
+                <!-- SWAPPED ORDER: Main title is second, uses mt-4 for separation -->
+                <h2 class="hero-title-text text-7xl md:text-8xl lg:text-9xl font-extrabold tracking-widest uppercase font-serif mt-4">
+                    JACK SOKOL
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <main class="content-container mx-auto px-6 lg:px-10">
+
+        <!-- About Me Section -->
+        <!-- 2. REDUCE GAP (HERO TO ABOUT ME): Reduced pt-32 to pt-16 -->
+        <section id="about" class="mb-20 pt-28 scroll-mt-8">
+            <h2 class="text-4xl font-serif font-light text-gray-800 text-center mb-12">About Me</h2>
+
+            <!-- Restored original image-left / text-right structure -->
+            <div class="flex flex-col md:flex-row items-start md:space-x-12">
+                
+                <!-- Image Container (25% Width Allocation) -->
+                <div class="md:w-1/2 flex-shrink-0 mb-8 md:mb-0">
+                    <!-- 2. CENTER PROFILE PICTURE: Added mx-auto to the div containing the profile picture itself -->
+                    <div class="w-80 h-80 rounded-full overflow-hidden profile-border shadow-xl mx-auto"> 
+                        <img src="headshot.webp" alt="Jack Sokol Profile Photo" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- About Text (75% Width Allocation) -->
+                <div class="md:w-1/2 md:flex-grow">
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Hi, I’m Jack. Growing up, it wasn’t unusual to hear the sound of walls being torn apart in my house. My dad, a mechanical engineer, was always uncovering old wires or trying to fix something. Watching him work sparked my curiosity about how things work, and by the time I got to college, I knew exactly what I wanted to be: a mechanical engineer, builder, and designer. Now a senior studying Mechanical Engineering and pursuing Northwestern’s Segal Design Certificate, I’m especially interested in manufacturing and product design. When I see a problem, I start with extensive background research, brainstorm around user needs, and iterate through prototypes until I create a mockup that I can use as a starting point. When I’m not in the shop making something, you can find me watching football or at the gym.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Gallery Section -->
+        <!-- 3. REDUCE GAP (ABOUT ME TO PROJECTS): Reduced mb-20 and pt-32 to mb-16 and pt-16 -->
+        <section id="projects" class="mb-16 pt-16 scroll-mt-20"> 
+            <h2 class="text-4xl font-serif font-light text-gray-800 text-center mb-12">Projects</h2>
+
+            <!-- Row 1: Vertical (1/3) then Wide (2/3) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Project Card 1: Zenblen Internship (Vertical - takes 1/3 columns) -->
+                <a href="zenblen_internship.html" class="lg:col-span-1 block bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="h-[24rem] overflow-hidden"> <!-- Uniform height h-[24rem] -->
+                        <img src="zenblen_thumbnail.webp" alt="Zenblen Internship" class="project-thumbnail">
+                    </div>
+                    <!-- Added text-center -->
+                    <div class="p-6 text-center">
+                        <h3 class="font-semibold text-lg mb-2">Automated Smoothie Kiosk</h3>
+                        <p class="text-gray-600 text-sm">DFMA, Compliance (UL/NSF), Root Cause Analysis, Process Standardization.</p>
+                    </div>
+                </a>
+
+                <!-- Project Card 2: Injection Molded Product (Wider/Landscape - takes 2/3 columns) -->
+                <a href="me340-2_project.html" class="lg:col-span-2 block bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="h-[24rem] overflow-hidden"> <!-- Uniform height h-[24rem] -->
+                        <img src="me340-2_thumbnail.webp" alt="Injection Molded Product" class="project-thumbnail">
+                    </div>
+                    <!-- Added text-center -->
+                    <div class="p-6 text-center">
+                        <h3 class="font-semibold text-lg mb-2">Injection Molding Project</h3>
+                        <p class="text-gray-600 text-sm">CNC Machining, Tooling Design, Metrology, Polypropylene Process Tuning.</p>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- Row 2: Wide (2/3) then Vertical (1/3) - ***NOW CORRECTLY SWAPPED*** -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+
+                <!-- Project Card 4: Eagle Scout Deck Renovation (Wider - takes 2/3 columns) - LISTED FIRST -->
+                <a href="eagle_scout_project.html" class="lg:col-span-2 block bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="h-[24rem] overflow-hidden"> <!-- Uniform height h-[24rem] -->
+                        <img src="eagle_scout_project_thumbnail.webp" alt="Eagle Scout Project" class="project-thumbnail">
+                    </div>
+                    <!-- Added text-center -->
+                    <div class="p-6 text-center">
+                        <h3 class="font-semibold text-lg mb-2">Eagle Scout Project: Deck Renovation</h3>
+                        <p class="text-gray-600 text-sm">Project Management, Budgeting, Unforeseen Risk Mitigation, Construction Leadership.</p>
+                    </div>
+                </a>
+                
+                <!-- Project Card 3: Formula SAE Uprights (Vertical - takes 1/3 columns) - LISTED SECOND -->
+                <a href="rear_uprights.html" class="lg:col-span-1 block bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="h-[24rem] overflow-hidden"> <!-- Uniform height h-[24rem] -->
+                        <img src="rear_uprights_thumbnail.webp" alt="Formula SAE Uprights" class="project-thumbnail">
+                    </div>
+                    <!-- Added text-center -->
+                    <div class="p-6 text-center">
+                        <h3 class="font-semibold text-lg mb-2">Formula SAE Rear Uprights</h3>
+                        <p class="text-gray-600 text-sm">FEA Optimization, CAM Programming, Multi-Constraint Design, Precision Machining.</p>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- Row 3: Vertical (1/3) then Wide (2/3) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+
+                <!-- Project Card 5: Obstacle Course (Square/Vertical - takes 1/3 columns) -->
+                <a href="obstacle_course.html" class="lg:col-span-1 block bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="h-[24rem] overflow-hidden"> <!-- Uniform height h-[24rem] -->
+                        <img src="obstacle_course_thumbnail.webp" alt="Kayak Hoist CAD" class="project-thumbnail">
+                    </div>
+                    <!-- Added text-center -->
+                    <div class="p-6 text-center">
+                        <h3 class="font-semibold text-lg mb-2">Backyard Obstacle Course</h3>
+                        <p class="text-gray-600 text-sm">Design, Personal Fabrication, Safety-Driven Construction.</p>
+                    </div>
+                </a>
+
+                <!-- Project Card 6: Kayak Hoist (Wider/Landscape - takes 2/3 columns) -->
+                <a href="kayak_hoist_project.html" class="lg:col-span-2 block bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="h-[24rem] overflow-hidden"> <!-- Uniform height h-[24rem] -->
+                        <img src="kayak_hoist_thumbnail.webp" alt="Backyard Obstacle Course" class="project-thumbnail">
+                    </div>
+                    <!-- Added text-center -->
+                    <div class="p-6 text-center">
+                        <h3 class="font-semibold text-lg mb-2">Adaptive Kayak Exit Hoist</h3>
+                        <p class="text-gray-600 text-sm">User-Centered Design, Prototyping, Accessibility Engineering, SolidWorks Modeling.</p>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+<footer id="contact" class="bg-gray-900 text-white py-12 mt-16">
+        <div class="content-container mx-auto px-6 lg:px-10 text-center">
+            <h2 class="text-3xl font-serif font-light mb-4">Contact</h2>
+            
+            <p class="text-white mb-2">
+                jackrobertsokol@gmail.com | 
+                <a href="YOUR_RESUME_FILE.pdf" target="_blank" class="hover:text-blue-400 transition duration-150">Resume</a> | 
+                <a href="https://www.linkedin.com/in/jack-sokol" target="_blank" class="hover:text-blue-400 transition duration-150">LinkedIn</a>
+            </p>
+            
+            <p class="text-gray-500 text-sm mt-6">&copy; 2025 Jack Sokol. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Sticky Header Logic -->
+    <script>
+        const nav = document.getElementById('sticky-nav');
+        const heroHeight = window.innerHeight;
+
+        function checkScroll() {
+            if (window.scrollY >= heroHeight - 80) { // -80px offset so the color changes just before the hero ends
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        }
+
+        window.addEventListener('scroll', checkScroll);
+        // Run once on load in case the page is reloaded while scrolled down
+        checkScroll();
+    </script>
+
+</body>
+</html>
